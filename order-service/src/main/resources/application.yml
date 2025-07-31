@@ -11,6 +11,8 @@ spring:
   cloud:
     nacos:
       server-addr: localhost:8848
+      discovery:
+        cluster-name: HZ
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
@@ -27,7 +29,9 @@ logging:
 #    service-url:
 #      defaultZone: http://127.0.0.1:8761/eureka
 
-
+userservice:
+  ribbon:
+    MFLoadBalanceRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
 ribbon:
   eager-load:
     enabled: true  #开启饥饿加载
