@@ -13,6 +13,7 @@ spring:
       server-addr: localhost:8848
       discovery:
         cluster-name: HZ
+#        namespace: 8a85a6a0-0d9b-4f6d-8d9f-f7d5d5d5d5d5  #命名空间切换
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
