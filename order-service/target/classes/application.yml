@@ -8,6 +8,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   application:
       name: orderservice
+  cloud:
+    nacos:
+      server-addr: localhost:8848
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
@@ -19,7 +22,11 @@ logging:
     dateformat: MM-dd HH:mm:ss:SSS
 
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:8761/eureka
+ribbon:
+  eager-load:
+    enabled: true  #开启饥饿加载
+    clients: orderservice  #指定客户端名称,这个是一个集合类型 如果有多个客户端可以写多个 以-的形式
