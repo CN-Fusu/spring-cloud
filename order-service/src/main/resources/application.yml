@@ -26,7 +26,10 @@ logging:
 #  client:
 #    service-url:
 #      defaultZone: http://127.0.0.1:8761/eureka
+
+
 ribbon:
   eager-load:
     enabled: true  #开启饥饿加载
-    clients: orderservice  #指定客户端名称,这个是一个集合类型 如果有多个客户端可以写多个 以-的形式
+    clients:  #指定客户端名称,这个是一个集合类型 如果有多个客户端可以写多个 以-的形式
+      - userservice
