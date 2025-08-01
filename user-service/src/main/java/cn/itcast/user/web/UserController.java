@@ -27,9 +27,15 @@ public class UserController {
 //    @Value("${pattern.dateformat}")
 //    private String dateformat;
 
+
     @GetMapping("now")
     public String now() {
         return LocalDateTime.now().format(DateTimeFormatter.ofPattern(patternProperties.getDateformat()));
+    }
+
+    @GetMapping("prop")
+    public PatternProperties properties(){
+        return patternProperties;
     }
 
     /**
