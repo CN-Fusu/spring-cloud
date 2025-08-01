@@ -45,7 +45,8 @@ public class UserController {
      * @return 用户
      */
     @GetMapping("/{id}")
-    public User queryById(@PathVariable("id") Long id) {
+    public User queryById(@PathVariable("id") Long id,@RequestHeader(value = "Truth") String truth) {
+        System.out.println("Truth: " + truth);
         return userService.queryById(id);
     }
 }
