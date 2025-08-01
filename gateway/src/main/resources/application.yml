@@ -17,3 +17,4 @@ spring:
           uri: lb://orderservice
           predicates:
             - Path=/order/**
+            - Before=2031-01-01T15:14:47.433+08:00[Asia/Shanghai] # 这里可以设置某个时间点之后才生效
