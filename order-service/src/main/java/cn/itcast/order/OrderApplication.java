@@ -1,5 +1,6 @@
 package cn.itcast.order;
 
+import cn.itcast.order.config.DefaultFeginConfiguration;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
 import org.mybatis.spring.annotation.MapperScan;
@@ -13,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 @MapperScan("cn.itcast.order.mapper")
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(defaultConfiguration = DefaultFeginConfiguration.class) //全局有效
 public class OrderApplication {
 
     public static void main(String[] args) {
